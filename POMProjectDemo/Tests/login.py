@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import unittest
 from POMProjectDemo.Pages.loginPage import LoginPage
 from POMProjectDemo.Pages.homePage import HomePage
+
 class LoginTest(unittest.TestCase):
 
     @classmethod
@@ -22,6 +25,9 @@ class LoginTest(unittest.TestCase):
         login.enter_username("Admin")
         login.enter_password("admin123")
         login.click_login()
+
+        #wait = WebDriverWait(driver, 10)
+        #dashboard_element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "oxd-topbar-header-breadcrumb")))
 
         homepage = HomePage(driver)
         homepage.click_welcome()

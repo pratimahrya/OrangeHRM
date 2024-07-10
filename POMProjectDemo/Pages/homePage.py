@@ -4,12 +4,12 @@ class HomePage():
     def __init__(self,driver):
         self.driver = driver
 
-        self.welcome_link_class_name = "oxd-userdropdown-tab"
+        self.welcome_class_name = "oxd-userdropdown-tab"
         self.logout_link_linkText = "Logout"
 
 
     def click_welcome(self):
-        self.driver.find_element(By.CLASS_NAME, self.welcome_link_class_name).click()
+        self.driver.find_element(By.CLASS_NAME, self.welcome_class_name).click()
 
 
     def click_logout(self):

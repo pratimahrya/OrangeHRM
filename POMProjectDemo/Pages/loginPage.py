@@ -8,15 +8,13 @@ class LoginPage():
         self.password_textbox_name = "password"
         self.login_button_class_name = "oxd-button--main"
 
-
     def enter_username(self, username):
         self.driver.find_element(By.NAME, self.username_textbox_name).clear()
-        self.driver.find_element(By.NAME, self.username_textbox_name).send_keys("username")
-
+        self.driver.find_element(By.NAME, self.username_textbox_name).send_keys(username)
 
     def enter_password(self, password):
-        self.driver.find_element(By.CLASS_NAME, self.password_textbox_name).clear()
-        self.driver.find_element(By.NAME, self.password_textbox_name).send_keys("password")
+        self.driver.find_element(By.NAME, self.password_textbox_name).clear()
+        self.driver.find_element(By.NAME, self.password_textbox_name).send_keys(password)
 
     def click_login(self):
         self.driver.find_element(By.CLASS_NAME, self.login_button_class_name).click()
